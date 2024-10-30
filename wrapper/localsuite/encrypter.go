@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0
 package localsuite
 
 import (
-	"github.com/trustbloc/kms-go/wrapper/api"
+	"github.com/dellekappa/kms-go/wrapper/api"
 )
 
 func newEncrypterDecrypter(kms keyGetter, crypto encDecrypter) api.EncrypterDecrypter {

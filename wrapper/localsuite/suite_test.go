@@ -8,11 +8,11 @@ package localsuite
 import (
 	"testing"
 
+	mockstorage "github.com/dellekappa/kms-go/internal/mock/storage"
+	"github.com/dellekappa/kms-go/kms"
+	"github.com/dellekappa/kms-go/secretlock/noop"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 	"github.com/stretchr/testify/require"
-	mockstorage "github.com/trustbloc/kms-go/internal/mock/storage"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/secretlock/noop"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
 )
 
 func TestSuite(t *testing.T) {

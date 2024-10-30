@@ -16,9 +16,9 @@ import (
 	"github.com/google/tink/go/subtle/random"
 	"golang.org/x/crypto/hkdf"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/secretlock"
 
-	cipherutil "github.com/trustbloc/kms-go/secretlock/local/internal/cipher"
+	cipherutil "github.com/dellekappa/kms-go/secretlock/local/internal/cipher"
 )
 
 // package hkdf provides an hkdf implementation of secretlock as a masterlock.

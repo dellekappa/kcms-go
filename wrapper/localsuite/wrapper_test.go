@@ -11,12 +11,12 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	mockcrypto "github.com/dellekappa/kms-go/mock/crypto"
+	mockkms "github.com/dellekappa/kms-go/mock/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 	"github.com/go-jose/go-jose/v3"
 	"github.com/stretchr/testify/require"
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	mockcrypto "github.com/trustbloc/kms-go/mock/crypto"
-	mockkms "github.com/trustbloc/kms-go/mock/kms"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
 )
 
 func TestKMSCrypto_Create(t *testing.T) {

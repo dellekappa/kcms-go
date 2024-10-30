@@ -24,8 +24,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs/api"
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/bbs/api"
+	bbspb "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
 )
 
 func TestSignerVerifierFactory(t *testing.T) {

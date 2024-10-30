@@ -20,12 +20,12 @@ import (
 	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"golang.org/x/crypto/nacl/box"
 
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
-	"github.com/trustbloc/kms-go/kms/localkms/internal/keywrapper"
-	"github.com/trustbloc/kms-go/secretlock/noop"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kms-go/kms/localkms/internal/keywrapper"
+	"github.com/dellekappa/kms-go/secretlock/noop"
+	"github.com/dellekappa/kms-go/util/cryptoutil"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/spi/kms"
 )
 
 // TODO: move CryptoBox out of the KMS package.

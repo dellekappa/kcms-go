@@ -18,9 +18,9 @@ import (
 	"github.com/google/tink/go/signature"
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/bbs"
 )
 
 func TestPubKeyExportAndRead(t *testing.T) {

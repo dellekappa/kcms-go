@@ -6,8 +6,8 @@ SPDX-License-Identifier: Apache-2.0
 package websuite
 
 import (
-	webcrypto "github.com/trustbloc/kms-go/crypto/webkms"
-	"github.com/trustbloc/kms-go/kms/webkms"
+	webcrypto "github.com/dellekappa/kms-go/crypto/webkms"
+	"github.com/dellekappa/kms-go/kms/webkms"
 )
 
 func makeFixedKey(

@@ -10,7 +10,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/secretlock"
 )
 
 func TestNoLock(t *testing.T) {

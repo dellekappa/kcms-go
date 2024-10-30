@@ -9,11 +9,11 @@ package localsuite
 import (
 	"fmt"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/kms/localkms"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
-	"github.com/trustbloc/kms-go/wrapper/api"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kms-go/kms/localkms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/wrapper/api"
 )
 
 // NewLocalCryptoSuite initializes a wrapper.Suite using local kms and crypto

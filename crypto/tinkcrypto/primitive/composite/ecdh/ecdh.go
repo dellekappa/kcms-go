@@ -22,8 +22,8 @@ SPDX-License-Identifier: Apache-2.0
 //
 //	     "github.com/google/tink/go/keyset"
 //
-//	     "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-//	     "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+//	     "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite"
+//	     "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
 //	 )
 //
 //	 func main() {

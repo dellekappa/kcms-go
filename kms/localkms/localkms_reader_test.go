@@ -13,7 +13,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/kms-go/kms"
+	"github.com/dellekappa/kms-go/kms"
 )
 
 func TestLocalKMSReader(t *testing.T) {

@@ -18,11 +18,11 @@ import (
 	"github.com/google/tink/go/keyset"
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kms-go/spi/crypto"
 )
 
 func TestFailConvertRecKeyToMarshalledJWK(t *testing.T) {

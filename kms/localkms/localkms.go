@@ -19,13 +19,13 @@ import (
 	"github.com/google/tink/go/tink"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms/internal/keywrapper"
+	"github.com/dellekappa/kms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kms-go/kms"
+	"github.com/dellekappa/kms-go/kms/localkms/internal/keywrapper"
 )
 
 const (

@@ -13,8 +13,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mockkms "github.com/trustbloc/kms-go/mock/kms"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	mockkms "github.com/dellekappa/kms-go/mock/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 )
 
 const (

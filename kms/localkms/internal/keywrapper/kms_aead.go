@@ -13,7 +13,7 @@ import (
 
 	"github.com/google/tink/go/tink"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/secretlock"
 )
 
 // LocalKeyURIPrefix for locally stored keys.

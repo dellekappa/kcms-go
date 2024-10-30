@@ -8,10 +8,10 @@ package localsuite
 import (
 	"testing"
 
+	mockstorage "github.com/dellekappa/kms-go/internal/mock/storage"
+	"github.com/dellekappa/kms-go/kms"
+	"github.com/dellekappa/kms-go/secretlock/noop"
 	"github.com/stretchr/testify/require"
-	mockstorage "github.com/trustbloc/kms-go/internal/mock/storage"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/secretlock/noop"
 )
 
 func TestNewLocalCryptoSuite(t *testing.T) {

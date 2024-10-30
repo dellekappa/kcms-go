@@ -34,13 +34,13 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/crypto/chacha20poly1305"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	"github.com/trustbloc/kms-go/kms/localkms"
-	webkmsimpl "github.com/trustbloc/kms-go/kms/webkms"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/bbs"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	"github.com/dellekappa/kms-go/kms/localkms"
+	webkmsimpl "github.com/dellekappa/kms-go/kms/webkms"
 )
 
 const (

@@ -9,7 +9,7 @@ package localkms
 import (
 	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/spi/kms"
 )
 
 // getKeyTemplate returns tink KeyTemplate associated with the provided keyType.

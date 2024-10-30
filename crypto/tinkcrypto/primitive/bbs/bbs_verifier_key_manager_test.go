@@ -16,7 +16,7 @@ import (
 	"github.com/google/tink/go/subtle"
 	"github.com/stretchr/testify/require"
 
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	bbspb "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
 )
 
 func TestVerifierKeyManager_Primitive(t *testing.T) {

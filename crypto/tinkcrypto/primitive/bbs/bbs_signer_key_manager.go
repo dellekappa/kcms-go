@@ -18,8 +18,8 @@ import (
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 	"google.golang.org/protobuf/proto"
 
-	bbssubtle "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs/subtle"
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	bbssubtle "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/bbs/subtle"
+	bbspb "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
 )
 
 const (

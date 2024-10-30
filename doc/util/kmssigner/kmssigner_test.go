@@ -12,9 +12,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mockcrypto "github.com/trustbloc/kms-go/mock/crypto"
+	mockcrypto "github.com/dellekappa/kms-go/mock/crypto"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 )
 
 func TestKMSSigner_Alg(t *testing.T) {

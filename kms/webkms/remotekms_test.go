@@ -28,7 +28,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 )
 
 const (

@@ -7,9 +7,9 @@ SPDX-License-Identifier: Apache-2.0
 package suite
 
 import (
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/mock/wrapper"
-	"github.com/trustbloc/kms-go/wrapper/api"
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	"github.com/dellekappa/kms-go/mock/wrapper"
+	"github.com/dellekappa/kms-go/wrapper/api"
 )
 
 // MockSuite mocks api.Suite.

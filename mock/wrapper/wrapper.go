@@ -7,9 +7,9 @@ SPDX-License-Identifier: Apache-2.0
 package wrapper
 
 import (
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/spi/kms"
-	wrapperapi "github.com/trustbloc/kms-go/wrapper/api"
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	"github.com/dellekappa/kms-go/spi/kms"
+	wrapperapi "github.com/dellekappa/kms-go/wrapper/api"
 )
 
 // MockKMSCrypto mocks wrapper.KMSCrypto.

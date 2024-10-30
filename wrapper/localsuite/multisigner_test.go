@@ -9,11 +9,11 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	mockcrypto "github.com/dellekappa/kms-go/mock/crypto"
+	mockkms "github.com/dellekappa/kms-go/mock/kms"
 	"github.com/go-jose/go-jose/v3"
 	"github.com/stretchr/testify/require"
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	mockcrypto "github.com/trustbloc/kms-go/mock/crypto"
-	mockkms "github.com/trustbloc/kms-go/mock/kms"
 )
 
 func TestMultiSigner(t *testing.T) {

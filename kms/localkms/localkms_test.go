@@ -28,17 +28,17 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	"github.com/trustbloc/kms-go/spi/crypto"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/crypto"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/spi/secretlock"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms/internal/keywrapper"
-	mocksecretlock "github.com/trustbloc/kms-go/mock/secretlock"
-	"github.com/trustbloc/kms-go/secretlock/local"
-	"github.com/trustbloc/kms-go/secretlock/local/masterlock/hkdf"
-	"github.com/trustbloc/kms-go/secretlock/noop"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kms-go/kms"
+	"github.com/dellekappa/kms-go/kms/localkms/internal/keywrapper"
+	mocksecretlock "github.com/dellekappa/kms-go/mock/secretlock"
+	"github.com/dellekappa/kms-go/secretlock/local"
+	"github.com/dellekappa/kms-go/secretlock/local/masterlock/hkdf"
+	"github.com/dellekappa/kms-go/secretlock/noop"
 )
 
 const testMasterKeyURI = keywrapper.LocalKeyURIPrefix + "test/key/uri"

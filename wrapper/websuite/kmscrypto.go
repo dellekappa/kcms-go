@@ -6,12 +6,12 @@ SPDX-License-Identifier: Apache-2.0
 package websuite
 
 import (
-	webcrypto "github.com/trustbloc/kms-go/crypto/webkms"
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/doc/jose/jwk/jwksupport"
-	"github.com/trustbloc/kms-go/kms/webkms"
-	"github.com/trustbloc/kms-go/spi/kms"
-	wrapperapi "github.com/trustbloc/kms-go/wrapper/api"
+	webcrypto "github.com/dellekappa/kms-go/crypto/webkms"
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	"github.com/dellekappa/kms-go/doc/jose/jwk/jwksupport"
+	"github.com/dellekappa/kms-go/kms/webkms"
+	"github.com/dellekappa/kms-go/spi/kms"
+	wrapperapi "github.com/dellekappa/kms-go/wrapper/api"
 )
 
 type kmsCrypto struct {

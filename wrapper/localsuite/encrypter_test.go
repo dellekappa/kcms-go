@@ -9,9 +9,9 @@ import (
 	"errors"
 	"testing"
 
+	mockcrypto "github.com/dellekappa/kms-go/mock/crypto"
+	mockkms "github.com/dellekappa/kms-go/mock/kms"
 	"github.com/stretchr/testify/require"
-	mockcrypto "github.com/trustbloc/kms-go/mock/crypto"
-	mockkms "github.com/trustbloc/kms-go/mock/kms"
 )
 
 func TestEncrypterDecrypter(t *testing.T) {

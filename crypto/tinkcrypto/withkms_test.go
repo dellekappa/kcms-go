@@ -11,17 +11,17 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mockstorage "github.com/trustbloc/kms-go/internal/mock/storage"
+	mockstorage "github.com/dellekappa/kms-go/internal/mock/storage"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/secretlock"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms"
-	"github.com/trustbloc/kms-go/secretlock/noop"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kms-go/kms"
+	"github.com/dellekappa/kms-go/kms/localkms"
+	"github.com/dellekappa/kms-go/secretlock/noop"
 )
 
 type kmsProvider struct {

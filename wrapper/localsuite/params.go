@@ -6,7 +6,7 @@ SPDX-License-Identifier: Apache-2.0
 package localsuite
 
 import (
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 )
 
 type signer interface {

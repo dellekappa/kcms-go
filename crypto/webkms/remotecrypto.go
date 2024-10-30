@@ -23,10 +23,10 @@ import (
 	"github.com/bluele/gcache"
 	"github.com/google/tink/go/keyset"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
-	webkmsimpl "github.com/trustbloc/kms-go/kms/webkms"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	webkmsimpl "github.com/dellekappa/kms-go/kms/webkms"
 )
 
 const (

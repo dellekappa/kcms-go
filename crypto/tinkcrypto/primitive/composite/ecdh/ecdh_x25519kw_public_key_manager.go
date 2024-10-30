@@ -15,9 +15,9 @@ import (
 	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh/subtle"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite"
+	"github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/composite/ecdh/subtle"
+	ecdhpb "github.com/dellekappa/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 const (

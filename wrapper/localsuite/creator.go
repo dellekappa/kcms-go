@@ -6,10 +6,10 @@ SPDX-License-Identifier: Apache-2.0
 package localsuite
 
 import (
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/doc/jose/jwk/jwksupport"
-	"github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/wrapper/api"
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	"github.com/dellekappa/kms-go/doc/jose/jwk/jwksupport"
+	"github.com/dellekappa/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/wrapper/api"
 )
 
 func newKeyCreator(kms keyCreator) api.RawKeyCreator {

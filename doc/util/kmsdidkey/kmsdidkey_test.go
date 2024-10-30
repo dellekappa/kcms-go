@@ -13,16 +13,16 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mockstorage "github.com/trustbloc/kms-go/internal/mock/storage"
+	mockstorage "github.com/dellekappa/kms-go/internal/mock/storage"
 
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms"
-	"github.com/trustbloc/kms-go/secretlock/noop"
+	"github.com/dellekappa/kms-go/kms"
+	"github.com/dellekappa/kms-go/kms/localkms"
+	"github.com/dellekappa/kms-go/secretlock/noop"
 
-	"github.com/trustbloc/kms-go/spi/crypto"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
-	"github.com/trustbloc/kms-go/spi/storage"
+	"github.com/dellekappa/kms-go/spi/crypto"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/storage"
 )
 
 func TestBuildDIDKeyByKMSKeyType(t *testing.T) {

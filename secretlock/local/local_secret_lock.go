@@ -16,9 +16,9 @@ import (
 
 	"github.com/google/tink/go/subtle/random"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kms-go/spi/secretlock"
 
-	cipherutil "github.com/trustbloc/kms-go/secretlock/local/internal/cipher"
+	cipherutil "github.com/dellekappa/kms-go/secretlock/local/internal/cipher"
 )
 
 // package local provides a local secret lock service. The user must create a master key and store it

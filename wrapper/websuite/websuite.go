@@ -9,10 +9,10 @@ package websuite
 import (
 	"net/http"
 
-	webcrypto "github.com/trustbloc/kms-go/crypto/webkms"
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/kms/webkms"
-	wrapperapi "github.com/trustbloc/kms-go/wrapper/api"
+	webcrypto "github.com/dellekappa/kms-go/crypto/webkms"
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	"github.com/dellekappa/kms-go/kms/webkms"
+	wrapperapi "github.com/dellekappa/kms-go/wrapper/api"
 )
 
 // NewWebCryptoSuite initializes an api.Suite using web kms and crypto

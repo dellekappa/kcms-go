@@ -8,8 +8,8 @@ package api
 import (
 	"errors"
 
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kms-go/doc/jose/jwk"
+	kmsapi "github.com/dellekappa/kms-go/spi/kms"
 )
 
 // Suite provides a suite of kms+crypto functions.
