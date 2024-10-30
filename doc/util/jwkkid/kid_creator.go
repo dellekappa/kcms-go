@@ -170,6 +170,7 @@ func curveSize(crv elliptic.Curve) int {
 func BuildJWK(keyBytes []byte, kt kms.KeyType) (*jwk.JWK, error) { //nolint: gocyclo
 	switch kt {
 	case
+		kms.RSARS256Type,
 		kms.ECDSAP256TypeDER, kms.ECDSAP384TypeDER, kms.ECDSAP521TypeDER,
 		kms.ECDSAP256TypeIEEEP1363, kms.ECDSAP384TypeIEEEP1363, kms.ECDSAP521TypeIEEEP1363,
 		kms.NISTP256ECDHKWType, kms.NISTP384ECDHKWType, kms.NISTP521ECDHKWType,

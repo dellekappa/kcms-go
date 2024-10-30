@@ -38,6 +38,8 @@ func keyTemplate(keyType kms.KeyType, _ ...kms.KeyOpts) (*tinkpb.KeyTemplate, er
 		return aead.ChaCha20Poly1305KeyTemplate(), nil
 	case kms.XChaCha20Poly1305Type:
 		return aead.XChaCha20Poly1305KeyTemplate(), nil
+	case kms.RSARS256Type:
+		return signature.RSA_SSA_PKCS1_3072_SHA256_F4_RAW_Key_Template(), nil
 	case kms.ECDSAP256TypeDER:
 		return signature.ECDSAP256KeyWithoutPrefixTemplate(), nil
 	case kms.ECDSAP384TypeDER:
