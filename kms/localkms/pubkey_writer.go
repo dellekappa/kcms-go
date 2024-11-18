@@ -9,6 +9,7 @@ package localkms
 import (
 	"crypto/ecdsa"
 	"crypto/elliptic"
+	"crypto/rsa"
 	"crypto/x509"
 	"fmt"
 	"io"
@@ -18,6 +19,7 @@ import (
 	commonpb "github.com/google/tink/go/proto/common_go_proto"
 	ecdsapb "github.com/google/tink/go/proto/ecdsa_go_proto"
 	ed25519pb "github.com/google/tink/go/proto/ed25519_go_proto"
+	rsassapb "github.com/google/tink/go/proto/rsa_ssa_pkcs1_go_proto"
 	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/google/tink/go/subtle"
 
@@ -31,6 +33,7 @@ import (
 )
 
 const (
+	rsassaVerifierTypeURL        = "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PublicKey"
 	ecdsaVerifierTypeURL         = "type.googleapis.com/google.crypto.tink.EcdsaPublicKey"
 	ed25519VerifierTypeURL       = "type.googleapis.com/google.crypto.tink.Ed25519PublicKey"
 	nistPECDHKWPublicKeyTypeURL  = "type.hyperledger.org/hyperledger.aries.crypto.tink.NistPEcdhKwPublicKey"
@@ -101,7 +104,7 @@ func write(w io.Writer, msg *tinkpb.Keyset) (kms.KeyType, error) {
 	for _, key := range ks {
 		if key.KeyId == primaryKID && key.Status == tinkpb.KeyStatusType_ENABLED {
 			switch key.KeyData.TypeUrl {
-			case ecdsaVerifierTypeURL, ed25519VerifierTypeURL, bbsVerifierKeyTypeURL, clCredDefKeyTypeURL,
+			case rsassaVerifierTypeURL, ecdsaVerifierTypeURL, ed25519VerifierTypeURL, bbsVerifierKeyTypeURL, clCredDefKeyTypeURL,
 				secp256k1VerifierTypeURL:
 				created, kt, err = writePubKey(w, key)
 				if err != nil {
@@ -142,6 +145,18 @@ func writePubKey(w io.Writer, key *tinkpb.Keyset_Key) (bool, kms.KeyType, error)
 	// TODO add other key types than the ones below and other than nistPECDHKWPublicKeyTypeURL and
 	// TODO x25519ECDHKWPublicKeyTypeURL(eg: secp256k1 when introduced in KMS).
 	switch key.KeyData.TypeUrl {
+	case rsassaVerifierTypeURL:
+		pubKeyProto := new(rsassapb.RsaSsaPkcs1PublicKey)
+
+		err := proto.Unmarshal(key.KeyData.Value, pubKeyProto)
+		if err != nil {
+			return false, "", err
+		}
+
+		marshaledRawPubKey, kt, err = getMarshalledRSAKeyValueFromProto(pubKeyProto)
+		if err != nil {
+			return false, "", err
+		}
 	case ecdsaVerifierTypeURL:
 		pubKeyProto := new(ecdsapb.EcdsaPublicKey)
 
@@ -212,6 +227,27 @@ func writePubKey(w io.Writer, key *tinkpb.Keyset_Key) (bool, kms.KeyType, error)
 	}
 
 	return n > 0, kt, nil
+}
+
+func getMarshalledRSAKeyValueFromProto(pubKeyProto *rsassapb.RsaSsaPkcs1PublicKey) ([]byte, kms.KeyType, error) {
+	// Estrai il modulo e l'esponente dalla chiave pubblica RSA
+	modulus := new(big.Int).SetBytes(pubKeyProto.N)
+	exponent := int(new(big.Int).SetBytes(pubKeyProto.E).Int64())
+
+	// Crea una chiave pubblica RSA utilizzando il modulo e l'esponente
+	rsaPubKey := &rsa.PublicKey{
+		N: modulus,
+		E: exponent,
+	}
+
+	// Codifica la chiave pubblica RSA nel formato desiderato (ad esempio, PEM)
+	marshalledKey, err := x509.MarshalPKIXPublicKey(rsaPubKey)
+	if err != nil {
+		return nil, "", fmt.Errorf("failed to marshal RSA public key: %w", err)
+	}
+
+	// Restituisci la chiave codificata e il tipo di chiave
+	return marshalledKey, kms.RSARS256Type, nil
 }
 
 func getMarshalledECDSAKeyValueFromProto(pubKeyProto *ecdsapb.EcdsaPublicKey) ([]byte, kms.KeyType, error) {
