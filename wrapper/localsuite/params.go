@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0
 package localsuite
 
 import (
+	"crypto/x509"
 	kmsapi "github.com/trustbloc/kms-go/spi/kms"
 )
 
@@ -56,4 +57,8 @@ type allCrypto interface {
 	multiSigner
 	verifier
 	encDecrypter
+}
+
+type certManager interface {
+	IssueCertificate(template *x509.Certificate, kh interface{}) (*x509.Certificate, error)
 }

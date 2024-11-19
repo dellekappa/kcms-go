@@ -129,3 +129,15 @@ func (f *fixedKeyImpl) Sign(msg []byte) ([]byte, error) {
 func (f *fixedKeyImpl) Verify(sig, msg []byte) error {
 	return f.cr.Verify(sig, msg, f.verKH)
 }
+
+func makeFixedKeyCertManager(kms keyGetter, manager certManager, kid string) (api.FixedKeyCertManager, error) {
+	kh, err := kms.Get(kid)
+	if err != nil {
+		return nil, err
+	}
+
+	return &fixedKeyCertManagerImpl{
+		cms: manager,
+		kh:  kh,
+	}, nil
+}

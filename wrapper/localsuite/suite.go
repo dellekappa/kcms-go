@@ -12,6 +12,7 @@ import (
 
 type suiteImpl struct {
 	kms    keyManager
+	cms    certManager
 	crypto allCrypto
 }
 
@@ -29,6 +30,10 @@ func (s *suiteImpl) KMSCrypto() (wrapperapi.KMSCrypto, error) {
 
 func (s *suiteImpl) KMSCryptoSigner() (wrapperapi.KMSCryptoSigner, error) {
 	return newKMSCryptoSigner(s.kms, s.crypto), nil
+}
+
+func (s *suiteImpl) KMSCertManager() (wrapperapi.KMSCertManager, error) {
+	return newKMSCertManager(s.kms, s.cms), nil
 }
 
 func (s *suiteImpl) KMSCryptoMultiSigner() (wrapperapi.KMSCryptoMultiSigner, error) {
@@ -53,4 +58,8 @@ func (s *suiteImpl) FixedKeySigner(kid string) (wrapperapi.FixedKeySigner, error
 
 func (s *suiteImpl) FixedKeyMultiSigner(kid string) (wrapperapi.FixedKeyMultiSigner, error) {
 	return getFixedMultiSigner(s.kms, s.crypto, kid)
+}
+
+func (s *suiteImpl) FixedKeyCertManager(kid string) (wrapperapi.FixedKeyCertManager, error) {
+	return makeFixedKeyCertManager(s.kms, s.cms, kid)
 }

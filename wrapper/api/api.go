@@ -6,6 +6,7 @@ SPDX-License-Identifier: Apache-2.0
 package api
 
 import (
+	"crypto/x509"
 	"errors"
 
 	"github.com/trustbloc/kms-go/doc/jose/jwk"
@@ -23,9 +24,11 @@ type Suite interface {
 	KMSCryptoSigner() (KMSCryptoSigner, error)
 	KMSCryptoMultiSigner() (KMSCryptoMultiSigner, error)
 	KMSCryptoVerifier() (KMSCryptoVerifier, error)
+	//KMSCertManager() (KMSCertManager, error)
 	EncrypterDecrypter() (EncrypterDecrypter, error)
 	FixedKeyCrypto(pub *jwk.JWK) (FixedKeyCrypto, error)
 	FixedKeySigner(kid string) (FixedKeySigner, error)
+	//FixedKeyCertManager(kid string) (FixedKeyCertManager, error)
 	FixedKeyMultiSigner(kid string) (FixedKeyMultiSigner, error)
 }
 
@@ -74,9 +77,20 @@ type KMSCryptoSigner interface {
 	FixedKeySigner(pub *jwk.JWK) (FixedKeySigner, error)
 }
 
+// KMSCertManager provides certificates management operations.
+type KMSCertManager interface {
+	IssueCertificate(template *x509.Certificate, pub *jwk.JWK) (*x509.Certificate, error)
+	FixedKeyCertManager(pub *jwk.JWK) (FixedKeyCertManager, error)
+}
+
 // FixedKeySigner provides the common signer interface, using a fixed key for each signer instance.
 type FixedKeySigner interface {
 	Sign(msg []byte) ([]byte, error)
+}
+
+// FixedKeyCertManager provides the common cert manager interface, using a fixed key for each manager instance.
+type FixedKeyCertManager interface {
+	IssueCertificate(template *x509.Certificate) (*x509.Certificate, error)
 }
 
 // KMSCryptoMultiSigner provides signing operations, including multi-signatures.
