@@ -8,7 +8,7 @@ package aes_cbc_hmac_aead_go_proto
 
 import (
 	aes_cbc_go_proto "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_go_proto"
-	hmac_go_proto "github.com/tink-crypto/tink-go/v2/proto/hmac_go
+	hmac_go_proto "github.com/tink-crypto/tink-go/v2/proto/hmac_go_proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
