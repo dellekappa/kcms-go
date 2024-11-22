@@ -8,9 +8,8 @@ package localsuite
 
 import (
 	"fmt"
-	"github.com/dellekappa/kcms-go/cms/localcms"
-	"github.com/dellekappa/kcms-go/spi/cms"
 
+	"github.com/dellekappa/kcms-go/cms/localcms"
 	"github.com/dellekappa/kcms-go/crypto/tinkcrypto"
 	"github.com/dellekappa/kcms-go/kms/localkms"
 	cmsapi "github.com/dellekappa/kcms-go/spi/cms"
@@ -19,9 +18,9 @@ import (
 	"github.com/dellekappa/kcms-go/suite/api"
 )
 
-// NewLocalPKISuite initializes a wrapper.Suite using local kms and crypto
+// NewLocalKCMSSuite initializes a wrapper.Suite using local kms and crypto
 // implementations, supporting all Suite APIs.
-func NewLocalPKISuite(
+func NewLocalKCMSSuite(
 	primaryKeyURI string,
 	keyStore kmsapi.Store,
 	certStore kmsapi.Store,
@@ -66,8 +65,8 @@ func (k *kmsProv) SecretLock() secretlock.Service {
 }
 
 type cmsProv struct {
-	store          cms.Store
-	signerProvider cms.SignerProvider
+	store          cmsapi.Store
+	signerProvider cmsapi.SignerProvider
 }
 
 func (c *cmsProv) Store() cmsapi.Store {

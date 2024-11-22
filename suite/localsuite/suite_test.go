@@ -19,7 +19,7 @@ func TestSuite(t *testing.T) {
 	store, e := kms.NewAriesProviderWrapper(mockstorage.NewKMSMockStoreProvider())
 	require.NoError(t, e)
 
-	suite, e := NewLocalPKISuite("local-lock://custom/primary/key/", store, &noop.NoLock{})
+	suite, e := NewLocalKCMSSuite("local-lock://custom/primary/key/", store, &noop.NoLock{})
 	require.NoError(t, e)
 
 	creator, e := suite.KeyCreator()

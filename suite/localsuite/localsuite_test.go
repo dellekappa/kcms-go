@@ -21,7 +21,7 @@ func TestNewLocalCryptoSuite(t *testing.T) {
 
 		cmsStore := mockstorage.NewCMSMockStore()
 
-		suite, err := NewLocalPKISuite("prefix://key/uri", kmsStore, cmsStore, &noop.NoLock{})
+		suite, err := NewLocalKCMSSuite("prefix://key/uri", kmsStore, cmsStore, &noop.NoLock{})
 		require.NoError(t, err)
 		require.NotNil(t, suite)
 	})
@@ -32,7 +32,7 @@ func TestNewLocalCryptoSuite(t *testing.T) {
 
 		cmsStore := mockstorage.NewCMSMockStore()
 
-		suite, err := NewLocalPKISuite("", kmsStore, cmsStore, &noop.NoLock{})
+		suite, err := NewLocalKCMSSuite("", kmsStore, cmsStore, &noop.NoLock{})
 		require.Error(t, err)
 		require.Contains(t, err.Error(), "initializing local key manager")
 		require.Nil(t, suite)
