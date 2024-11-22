@@ -14,11 +14,11 @@ import (
 
 	"golang.org/x/crypto/nacl/box"
 
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kcms-go/doc/util/jwkkid"
 )
 
 // TODO move CryptoBox out of webkms package.

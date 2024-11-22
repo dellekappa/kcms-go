@@ -13,20 +13,20 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mockstorage "github.com/trustbloc/kms-go/internal/mock/storage"
+	mockstorage "github.com/dellekappa/kcms-go/internal/mock/storage"
 
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms"
-	"github.com/trustbloc/kms-go/secretlock/noop"
+	"github.com/dellekappa/kcms-go/kms"
+	"github.com/dellekappa/kcms-go/kms/localkms"
+	"github.com/dellekappa/kcms-go/secretlock/noop"
 
-	"github.com/trustbloc/kms-go/spi/crypto"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
-	"github.com/trustbloc/kms-go/spi/storage"
+	"github.com/dellekappa/kcms-go/spi/crypto"
+	kmsapi "github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/storage"
 )
 
 func TestBuildDIDKeyByKMSKeyType(t *testing.T) {
-	sp := mockstorage.NewMockStoreProvider()
+	sp := mockstorage.NewKMSMockStoreProvider()
 	k := newKMS(t, sp)
 
 	_, ed25519Key, err := k.CreateAndExportPubKeyBytes(kmsapi.ED25519Type)

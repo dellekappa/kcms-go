@@ -14,18 +14,18 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/tink/go/aead"
-	aeadsubtle "github.com/google/tink/go/aead/subtle"
-	"github.com/google/tink/go/core/primitiveset"
-	"github.com/google/tink/go/keyset"
-	"github.com/google/tink/go/mac"
-	"github.com/google/tink/go/signature"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	aeadsubtle "github.com/tink-crypto/tink-go/v2/aead/subtle"
+	"github.com/tink-crypto/tink-go/v2/core/primitiveset"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	"github.com/tink-crypto/tink-go/v2/mac"
+	"github.com/tink-crypto/tink-go/v2/signature"
 	"golang.org/x/crypto/chacha20poly1305"
 
-	"github.com/trustbloc/kms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/bbs"
 )
 
 const (

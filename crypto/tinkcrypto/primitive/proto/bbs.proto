@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package google.crypto.tink;
+
+import "proto/common.proto";
+
+option go_package = "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto";
+
+enum BBSCurveType {
+  UNKNOWN_BBS_CURVE_TYPE = 0;
+  BLS12_381 = 1;
+}
+
+enum GroupField {
+  UNKNOWN_GROUP_FIELD = 0;
+  G1 = 1;
+  G2 = 2;
+}
+
+message BBSParams {
+  HashType hash_type = 1;
+  BBSCurveType curve = 2;
+  GroupField group = 3;
+}
+
+message BBSPublicKey {
+  uint32 version = 1;
+  BBSParams params = 2;
+  bytes key_value = 3;
+}
+
+message BBSPrivateKey {
+  uint32 version = 1;
+  BBSPublicKey public_key = 2;
+  bytes key_value = 3;
+}
+
+message BBSKeyFormat {
+  BBSParams params = 1;
+}
+

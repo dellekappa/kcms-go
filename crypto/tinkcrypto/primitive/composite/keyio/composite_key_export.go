@@ -14,21 +14,21 @@ import (
 	"io"
 	"strings"
 
-	"github.com/golang/protobuf/proto"
-	tinkaead "github.com/google/tink/go/aead"
-	hybrid "github.com/google/tink/go/hybrid/subtle"
-	"github.com/google/tink/go/insecurecleartextkeyset"
-	"github.com/google/tink/go/keyset"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	tinkaead "github.com/tink-crypto/tink-go/v2/aead"
+	hybrid "github.com/tink-crypto/tink-go/v2/hybrid/subtle"
+	"github.com/tink-crypto/tink-go/v2/insecurecleartextkeyset"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 // Package keyio supports exporting of Composite keys (aka Write) and converting the public key part of the a composite

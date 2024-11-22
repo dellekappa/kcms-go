@@ -10,17 +10,17 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/google/tink/go/aead"
-	"github.com/google/tink/go/hybrid"
-	"github.com/google/tink/go/keyset"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/signature"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/hybrid"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/signature"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/bbs"
 )
 
 func TestPubKeyExportAndRead(t *testing.T) {

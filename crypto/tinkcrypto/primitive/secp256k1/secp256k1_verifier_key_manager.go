@@ -9,12 +9,12 @@ package secp256k1
 import (
 	"fmt"
 
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 	"google.golang.org/protobuf/proto"
 
-	secp256k1pb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/secp256k1/subtle"
+	secp256k1pb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/secp256k1/subtle"
 )
 
 const (

@@ -10,11 +10,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/secp256k1"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/secp256k1"
 )
 
 func TestKeyTemplates(t *testing.T) {

@@ -10,12 +10,12 @@ import (
 	"strings"
 	"testing"
 
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 	"google.golang.org/protobuf/proto"
 
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	bbspb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
 )
 
 func TestBBSignerKeyManager_Primitive(t *testing.T) {

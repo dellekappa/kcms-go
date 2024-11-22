@@ -12,15 +12,15 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/tink/go/aead"
-	subtleaead "github.com/google/tink/go/aead/subtle"
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/subtle/random"
-	"github.com/google/tink/go/tink"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	subtleaead "github.com/tink-crypto/tink-go/v2/aead/subtle"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
+	"github.com/tink-crypto/tink-go/v2/tink"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite"
 )
 
 func TestEncryptDecrypt(t *testing.T) {

@@ -14,23 +14,23 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/aead"
-	"github.com/google/tink/go/core/primitiveset"
-	hybrid "github.com/google/tink/go/hybrid/subtle"
-	"github.com/google/tink/go/keyset"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/signature"
-	"github.com/google/tink/go/subtle/random"
-	"github.com/google/tink/go/testkeyset"
-	"github.com/google/tink/go/testutil"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/core/primitiveset"
+	hybrid "github.com/tink-crypto/tink-go/v2/hybrid/subtle"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/signature"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
+	"github.com/tink-crypto/tink-go/v2/testkeyset"
+	"github.com/tink-crypto/tink-go/v2/testutil"
+	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 func TestECDHESFactory(t *testing.T) {

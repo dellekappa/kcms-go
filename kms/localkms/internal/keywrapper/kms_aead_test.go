@@ -11,10 +11,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/tink/go/tink"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/tink"
 
-	"github.com/trustbloc/kms-go/mock/secretlock"
+	"github.com/dellekappa/kcms-go/mock/secretlock"
 )
 
 func TestLocalKMS_New_AEAD(t *testing.T) {

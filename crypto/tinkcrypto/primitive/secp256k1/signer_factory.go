@@ -9,11 +9,11 @@ package secp256k1
 import (
 	"fmt"
 
-	"github.com/google/tink/go/core/primitiveset"
-	"github.com/google/tink/go/core/registry"
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/tink"
+	"github.com/tink-crypto/tink-go/v2/core/primitiveset"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/tink"
 )
 
 // NewSigner returns a Signer primitive from the given keyset handle.

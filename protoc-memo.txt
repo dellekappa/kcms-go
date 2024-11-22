@@ -1,0 +1,1 @@
+protoc --proto_path=./crypto/tinkcrypto/primitive --proto_path=$GOPATH/pkg/mod/github.com/tink-crypto/tink-go/v2@v2.2.0 --go_out=./ --go_opt=module=github.com/dellekappa/kcms-go $(cd crypto/tinkcrypto/primitive && ls proto/*.proto)

@@ -10,12 +10,12 @@ import (
 	"bytes"
 	"testing"
 
-	tinkaead "github.com/google/tink/go/aead"
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	tinkaead "github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
 )
 
 func TestKeyTemplates(t *testing.T) {

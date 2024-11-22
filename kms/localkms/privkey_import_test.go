@@ -16,15 +16,15 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 
-	mocksecretlock "github.com/trustbloc/kms-go/mock/secretlock"
-	"github.com/trustbloc/kms-go/secretlock/noop"
+	mocksecretlock "github.com/dellekappa/kcms-go/mock/secretlock"
+	"github.com/dellekappa/kcms-go/secretlock/noop"
 )
 
 func TestImportECDSAKeyWithInvalidKey(t *testing.T) {

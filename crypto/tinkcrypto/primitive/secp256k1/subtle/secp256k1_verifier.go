@@ -13,7 +13,7 @@ import (
 	"hash"
 	"math/big"
 
-	"github.com/google/tink/go/subtle"
+	"github.com/tink-crypto/tink-go/v2/subtle"
 )
 
 var errInvalidSecp256K1Signature = errors.New("secp256k1_verifier: invalid signature")

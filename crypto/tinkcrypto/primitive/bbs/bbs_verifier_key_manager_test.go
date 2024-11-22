@@ -11,12 +11,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	"github.com/google/tink/go/subtle"
 	"github.com/stretchr/testify/require"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	"github.com/tink-crypto/tink-go/v2/subtle"
+	"google.golang.org/protobuf/proto"
 
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	bbspb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
 )
 
 func TestVerifierKeyManager_Primitive(t *testing.T) {

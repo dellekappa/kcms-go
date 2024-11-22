@@ -14,15 +14,15 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/tink/go/aead"
-	"github.com/google/tink/go/keyset"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/keyset"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/keyio"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 )
 
 func TestFailConvertRecKeyToMarshalledJWK(t *testing.T) {

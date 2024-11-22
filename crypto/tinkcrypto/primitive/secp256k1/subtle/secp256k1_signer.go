@@ -14,7 +14,7 @@ import (
 	"hash"
 	"math/big"
 
-	"github.com/google/tink/go/subtle"
+	"github.com/tink-crypto/tink-go/v2/subtle"
 )
 
 // Secp256K1Signer is an implementation of Signer for secp256k1 Secp256k2 (Koblitz curve).

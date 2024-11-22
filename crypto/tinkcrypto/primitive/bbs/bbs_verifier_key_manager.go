@@ -10,12 +10,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs/subtle"
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/bbs/subtle"
+	bbspb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
 )
 
 const (

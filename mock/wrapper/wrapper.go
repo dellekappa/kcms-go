@@ -7,9 +7,11 @@ SPDX-License-Identifier: Apache-2.0
 package wrapper
 
 import (
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/spi/kms"
-	wrapperapi "github.com/trustbloc/kms-go/wrapper/api"
+	"crypto/x509"
+	"errors"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	"github.com/dellekappa/kcms-go/spi/kms"
+	suiteapi "github.com/dellekappa/kcms-go/suite/api"
 )
 
 // MockKMSCrypto mocks wrapper.KMSCrypto.
@@ -74,22 +76,22 @@ func (m *MockKMSCrypto) Decrypt(cipher, aad, nonce []byte, kid string) (msg []by
 }
 
 // FixedKeyCrypto mock.
-func (m *MockKMSCrypto) FixedKeyCrypto(pub *jwk.JWK) (wrapperapi.FixedKeyCrypto, error) {
+func (m *MockKMSCrypto) FixedKeyCrypto(pub *jwk.JWK) (suiteapi.FixedKeyCrypto, error) {
 	return makeMockFixedKey(m)
 }
 
 // FixedKeySigner mock.
-func (m *MockKMSCrypto) FixedKeySigner(pub *jwk.JWK) (wrapperapi.FixedKeySigner, error) {
+func (m *MockKMSCrypto) FixedKeySigner(pub *jwk.JWK) (suiteapi.FixedKeySigner, error) {
 	return makeMockFixedKey(m)
 }
 
 // FixedMultiSignerGivenKID mock.
-func (m *MockKMSCrypto) FixedMultiSignerGivenKID(kid string) (wrapperapi.FixedKeyMultiSigner, error) {
+func (m *MockKMSCrypto) FixedMultiSignerGivenKID(kid string) (suiteapi.FixedKeyMultiSigner, error) {
 	return makeMockFixedKey(m)
 }
 
 // FixedKeyMultiSigner mock.
-func (m *MockKMSCrypto) FixedKeyMultiSigner(pub *jwk.JWK) (wrapperapi.FixedKeyMultiSigner, error) {
+func (m *MockKMSCrypto) FixedKeyMultiSigner(pub *jwk.JWK) (suiteapi.FixedKeyMultiSigner, error) {
 	return makeMockFixedKey(m)
 }
 
@@ -128,6 +130,20 @@ func (m *MockFixedKeyCrypto) Verify(sig, msg []byte) error {
 	return m.VerifyErr
 }
 
-var _ wrapperapi.KMSCryptoMultiSigner = &MockKMSCrypto{}
+type MockCMS struct{}
 
-var _ wrapperapi.KMSCrypto = &MockKMSCrypto{}
+// IssueCertificate mock
+func (m *MockCMS) IssueCertificate(template *x509.Certificate, pub *jwk.JWK) (*x509.Certificate, error) {
+	return nil, errors.New("not yet implemented")
+}
+
+// FixedKeyCertIssuer mock.
+func (m *MockCMS) FixedKeyCertIssuer(pub *jwk.JWK) (suiteapi.FixedKeyCertIssuer, error) {
+	return nil, errors.New("not yet implemented")
+}
+
+var _ suiteapi.KMSCryptoMultiSigner = &MockKMSCrypto{}
+
+var _ suiteapi.KMSCrypto = &MockKMSCrypto{}
+
+var _ suiteapi.CMSCertIssuer = &MockCMS{}

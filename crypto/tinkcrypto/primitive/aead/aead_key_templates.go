@@ -7,14 +7,14 @@ SPDX-License-Identifier: Apache-2.0
 package aead
 
 import (
-	"github.com/golang/protobuf/proto"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	hmacpb "github.com/google/tink/go/proto/hmac_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	hmacpb "github.com/tink-crypto/tink-go/v2/proto/hmac_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	aescbcpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_go_proto"
-	aeadpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	aescbcpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_go_proto"
+	aeadpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
 )
 
 // This file contains pre-generated KeyTemplates for AEAD keys. One can use these templates to generate new Keysets.

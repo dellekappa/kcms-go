@@ -21,9 +21,9 @@ SPDX-License-Identifier: Apache-2.0
 //	 import (
 //	     "bytes"
 //
-//	     "github.com/google/tink/go/keyset"
+//	     "github.com/tink-crypto/tink-go/v2/keyset"
 //
-//	     "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
+//	     "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/bbs"
 //	 )
 //
 //	 func main() {
@@ -91,7 +91,7 @@ package bbs
 import (
 	"fmt"
 
-	"github.com/google/tink/go/core/registry"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
 )
 
 // TODO - find a better way to setup tink than init.

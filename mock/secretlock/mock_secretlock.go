@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 package secretlock
 
 import (
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 )
 
 // MockSecretLock mocking a Secret Lock service.

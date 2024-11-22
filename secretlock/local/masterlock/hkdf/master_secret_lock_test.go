@@ -11,10 +11,10 @@ import (
 	"crypto/sha512"
 	"testing"
 
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 )
 
 func TestMasterLock(t *testing.T) {

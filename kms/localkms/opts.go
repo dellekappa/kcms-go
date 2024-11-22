@@ -7,9 +7,9 @@
 package localkms
 
 import (
-	"github.com/google/tink/go/tink"
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	kmsapi "github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
+	"github.com/tink-crypto/tink-go/v2/tink"
 )
 
 type kmsOpts struct {

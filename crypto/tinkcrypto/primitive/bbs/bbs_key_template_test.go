@@ -10,8 +10,8 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/google/tink/go/keyset"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/keyset"
 )
 
 func TestBBSKeyTemplateSuccess(t *testing.T) {

@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/kms"
+	"github.com/dellekappa/kcms-go/kms"
 )
 
 func TestLocalKMSWriter(t *testing.T) {

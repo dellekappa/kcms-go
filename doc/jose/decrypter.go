@@ -13,18 +13,18 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/google/tink/go/keyset"
+	"github.com/tink-crypto/tink-go/v2/keyset"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/api"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	resolver "github.com/trustbloc/kms-go/doc/jose/kidresolver"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/api"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	resolver "github.com/dellekappa/kcms-go/doc/jose/kidresolver"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/kms"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/kms"
 )
 
 // Decrypter interface to Decrypt JWE messages.

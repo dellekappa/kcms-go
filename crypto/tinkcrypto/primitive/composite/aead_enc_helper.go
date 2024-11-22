@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 package composite
 
 import (
-	"github.com/google/tink/go/tink"
+	"github.com/tink-crypto/tink-go/v2/tink"
 )
 
 // EncrypterHelper is a helper for Content Encryption of composite ECDH (ES/1PU) key wrapping + AEAD content encryption

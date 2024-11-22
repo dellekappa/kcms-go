@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package google.crypto.tink;
+
+option go_package = "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/cl_go_proto";
+
+message CLCredDefParams {
+   repeated string attrs = 1;
+}
+
+message CLCredDefPublicKey {
+  uint32 version = 1;
+  bytes key_value = 2;
+  bytes key_correctness_proof = 3;
+  CLCredDefParams params = 4;
+}
+
+message CLCredDefPrivateKey {
+  uint32 version = 1;
+  CLCredDefPublicKey public_key = 2;
+  bytes key_value = 3;
+}
+
+message CLCredDefKeyFormat {
+  CLCredDefParams params = 1;
+}
+
+message CLMasterSecret {
+  uint32 version = 1;
+  bytes key_value = 2;
+}
+
+message CLMasterSecretKeyFormat {
+
+}
+

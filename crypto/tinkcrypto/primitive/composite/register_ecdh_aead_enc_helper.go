@@ -11,19 +11,19 @@ import (
 	"errors"
 	"fmt"
 
-	aead "github.com/google/tink/go/aead/subtle"
-	"github.com/google/tink/go/core/registry"
-	gcmpb "github.com/google/tink/go/proto/aes_gcm_go_proto"
-	chachapb "github.com/google/tink/go/proto/chacha20_poly1305_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	xchachapb "github.com/google/tink/go/proto/xchacha20_poly1305_go_proto"
-	"github.com/google/tink/go/tink"
+	aead "github.com/tink-crypto/tink-go/v2/aead/subtle"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
+	gcmpb "github.com/tink-crypto/tink-go/v2/proto/aes_gcm_go_proto"
+	chachapb "github.com/tink-crypto/tink-go/v2/proto/chacha20_poly1305_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	xchachapb "github.com/tink-crypto/tink-go/v2/proto/xchacha20_poly1305_go_proto"
+	"github.com/tink-crypto/tink-go/v2/tink"
 	"golang.org/x/crypto/chacha20poly1305"
 	"golang.org/x/crypto/poly1305"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	cbchmacpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	cbchmacpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
 )
 
 const (

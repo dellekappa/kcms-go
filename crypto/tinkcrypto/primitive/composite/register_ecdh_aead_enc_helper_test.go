@@ -12,20 +12,20 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/aead"
-	subtleaead "github.com/google/tink/go/aead/subtle"
-	"github.com/google/tink/go/mac"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/signature"
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	subtleaead "github.com/tink-crypto/tink-go/v2/aead/subtle"
+	"github.com/tink-crypto/tink-go/v2/mac"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/signature"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 	"golang.org/x/crypto/chacha20poly1305"
 	"golang.org/x/crypto/poly1305"
+	"google.golang.org/protobuf/proto"
 
-	cbchmacaead "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	subtlecbchmacaead "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	aeadpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
+	cbchmacaead "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	subtlecbchmacaead "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	aeadpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
 )
 
 func newKeyTemplates() ([]*tinkpb.KeyTemplate, []int) {

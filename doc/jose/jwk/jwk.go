@@ -23,8 +23,8 @@ import (
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 	"golang.org/x/crypto/ed25519"
 
-	"github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 )
 
 const (

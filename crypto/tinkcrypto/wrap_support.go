@@ -19,12 +19,12 @@ import (
 	"fmt"
 
 	josecipher "github.com/go-jose/go-jose/v3/cipher"
-	hybrid "github.com/google/tink/go/hybrid/subtle"
+	hybrid "github.com/tink-crypto/tink-go/v2/hybrid/subtle"
 	"golang.org/x/crypto/chacha20poly1305"
 
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
 )
 
 type keyWrapper interface {

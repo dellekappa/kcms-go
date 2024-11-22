@@ -7,11 +7,11 @@ SPDX-License-Identifier: Apache-2.0
 package secp256k1
 
 import (
-	"github.com/golang/protobuf/proto"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"google.golang.org/protobuf/proto"
 
-	secp256k1pb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
+	secp256k1pb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
 )
 
 // This file contains pre-generated KeyTemplates for Signer and Verifier.

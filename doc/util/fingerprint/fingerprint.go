@@ -18,7 +18,7 @@ import (
 
 	"github.com/btcsuite/btcutil/base58"
 
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
 )
 
 const (

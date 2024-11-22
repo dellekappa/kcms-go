@@ -9,7 +9,7 @@ package secp256k1
 import (
 	"fmt"
 
-	"github.com/google/tink/go/core/registry"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
 )
 
 // Package secp256k1 provides implementations of the Signer and Verifier

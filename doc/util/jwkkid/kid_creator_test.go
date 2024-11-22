@@ -23,10 +23,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 )
 
 // TODO: clean up these tests

@@ -62,3 +62,5 @@ func WithAssociatedData(associatedData []byte) KeyOpts {
 		opts.associatedData = associatedData
 	}
 }
+
+// WithSelfSignedCert

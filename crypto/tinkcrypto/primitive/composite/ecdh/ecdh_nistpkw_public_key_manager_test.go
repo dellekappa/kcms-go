@@ -12,17 +12,17 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/aead"
-	hybrid "github.com/google/tink/go/hybrid/subtle"
-	gcmpb "github.com/google/tink/go/proto/aes_gcm_go_proto"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	hybrid "github.com/tink-crypto/tink-go/v2/hybrid/subtle"
+	gcmpb "github.com/tink-crypto/tink-go/v2/proto/aes_gcm_go_proto"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"google.golang.org/protobuf/proto"
 
-	cbcaead "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	cbcaead "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 func TestECDHNISTPAESPublicKeyManager_Primitive(t *testing.T) {

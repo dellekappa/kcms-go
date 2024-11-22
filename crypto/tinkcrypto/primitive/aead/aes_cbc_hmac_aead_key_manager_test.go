@@ -10,19 +10,19 @@ import (
 	"fmt"
 	"testing"
 
-	subtleaead "github.com/google/tink/go/aead/subtle"
-	"github.com/google/tink/go/core/registry"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	hmacpb "github.com/google/tink/go/proto/hmac_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	subtleaead "github.com/tink-crypto/tink-go/v2/aead/subtle"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	hmacpb "github.com/tink-crypto/tink-go/v2/proto/hmac_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	aescbcpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_go_proto"
-	aeadpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	aescbcpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_go_proto"
+	aeadpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/aes_cbc_hmac_aead_go_proto"
 )
 
 const (

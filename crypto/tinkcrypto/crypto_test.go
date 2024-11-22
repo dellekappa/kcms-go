@@ -13,27 +13,27 @@ import (
 	"math/big"
 	"testing"
 
-	tinkaead "github.com/google/tink/go/aead"
-	tinkaeadsubtle "github.com/google/tink/go/aead/subtle"
-	hybrid "github.com/google/tink/go/hybrid/subtle"
-	"github.com/google/tink/go/keyset"
-	"github.com/google/tink/go/mac"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/signature"
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	tinkaead "github.com/tink-crypto/tink-go/v2/aead"
+	tinkaeadsubtle "github.com/tink-crypto/tink-go/v2/aead/subtle"
+	hybrid "github.com/tink-crypto/tink-go/v2/hybrid/subtle"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	"github.com/tink-crypto/tink-go/v2/mac"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/signature"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 	chacha "golang.org/x/crypto/chacha20poly1305"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/secp256k1"
+	"github.com/dellekappa/kcms-go/crypto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/bbs"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/secp256k1"
 )
 
 const testMessage = "test message"
@@ -214,7 +214,7 @@ func TestCrypto_SignVerify(t *testing.T) {
 	})
 
 	t.Run("test with P-384 signature", func(t *testing.T) {
-		kh, err := keyset.NewHandle(signature.ECDSAP384KeyTemplate())
+		kh, err := keyset.NewHandle(signature.ECDSAP384SHA512KeyTemplate())
 		require.NoError(t, err)
 
 		badKH, err := keyset.NewHandle(tinkaead.KMSEnvelopeAEADKeyTemplate("babdUrl", nil))

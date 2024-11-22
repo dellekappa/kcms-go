@@ -15,13 +15,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 
-	"github.com/trustbloc/kms-go/secretlock/local/masterlock/hkdf"
-	"github.com/trustbloc/kms-go/secretlock/local/masterlock/pbkdf2"
+	"github.com/dellekappa/kcms-go/secretlock/local/masterlock/hkdf"
+	"github.com/dellekappa/kcms-go/secretlock/local/masterlock/pbkdf2"
 )
 
 const (

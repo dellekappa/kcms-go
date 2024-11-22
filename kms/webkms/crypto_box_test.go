@@ -17,13 +17,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 	"golang.org/x/crypto/nacl/box"
 
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	mockkms "github.com/trustbloc/kms-go/mock/kms"
+	mockkms "github.com/dellekappa/kcms-go/mock/kms"
 )
 
 func TestNewRemoteCryptoBox(t *testing.T) {

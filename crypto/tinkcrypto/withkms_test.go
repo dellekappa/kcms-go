@@ -11,17 +11,17 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mockstorage "github.com/trustbloc/kms-go/internal/mock/storage"
+	mockstorage "github.com/dellekappa/kcms-go/internal/mock/storage"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms"
-	"github.com/trustbloc/kms-go/secretlock/noop"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kcms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kcms-go/kms"
+	"github.com/dellekappa/kcms-go/kms/localkms"
+	"github.com/dellekappa/kcms-go/secretlock/noop"
 )
 
 type kmsProvider struct {
@@ -60,7 +60,7 @@ func TestSignVerifyKeyTypes(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			kmsStore, err := kms.NewAriesProviderWrapper(mockstorage.NewMockStoreProvider())
+			kmsStore, err := kms.NewAriesProviderWrapper(mockstorage.NewKMSMockStoreProvider())
 			require.NoError(t, err)
 
 			kmsStorage, err := localkms.New("local-lock://test/master/key/", &kmsProvider{

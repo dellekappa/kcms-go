@@ -21,21 +21,21 @@ import (
 	"strings"
 
 	"github.com/go-jose/go-jose/v3"
-	hybrid "github.com/google/tink/go/hybrid/subtle"
-	"github.com/google/tink/go/keyset"
-	"github.com/google/tink/go/subtle/random"
+	hybrid "github.com/tink-crypto/tink-go/v2/hybrid/subtle"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 	"golang.org/x/crypto/curve25519"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/api"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/api"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 )
 
 // EncAlg represents the JWE content encryption algorithm.

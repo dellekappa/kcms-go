@@ -17,19 +17,19 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	tinkaead "github.com/google/tink/go/aead"
-	"github.com/google/tink/go/hybrid"
-	"github.com/google/tink/go/hybrid/subtle"
-	"github.com/google/tink/go/keyset"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	tinkaead "github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/hybrid"
+	"github.com/tink-crypto/tink-go/v2/hybrid/subtle"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"google.golang.org/protobuf/proto"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 func TestPubKeyExport(t *testing.T) {

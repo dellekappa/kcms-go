@@ -12,7 +12,7 @@ import (
 	"fmt"
 
 	josecipher "github.com/go-jose/go-jose/v3/cipher"
-	"github.com/google/tink/go/subtle/random"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 )
 
 // AESCBCHMAC is an implementation of AEAD interface.

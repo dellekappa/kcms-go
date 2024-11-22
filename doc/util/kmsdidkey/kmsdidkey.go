@@ -13,14 +13,14 @@ import (
 	"fmt"
 
 	"github.com/btcsuite/btcutil/base58"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
 
-	afgocrypto "github.com/trustbloc/kms-go/crypto"
-	"github.com/trustbloc/kms-go/doc/util/fingerprint"
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
+	afgocrypto "github.com/dellekappa/kcms-go/crypto"
+	"github.com/dellekappa/kcms-go/doc/util/fingerprint"
+	"github.com/dellekappa/kcms-go/doc/util/jwkkid"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/kms"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/kms"
 )
 
 // keyTypeCodecs maps kms.KeyType to did:key codec.

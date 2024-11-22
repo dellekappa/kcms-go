@@ -11,9 +11,9 @@ import (
 	"errors"
 	"regexp"
 
-	"github.com/google/tink/go/tink"
+	"github.com/tink-crypto/tink-go/v2/tink"
 
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 )
 
 // LocalKeyURIPrefix for locally stored keys.

@@ -12,16 +12,16 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/tink/go/aead"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	cbcaead "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	cbcaead "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 func TestECDHX25519XChachaPrivateKeyManager_Primitive(t *testing.T) {

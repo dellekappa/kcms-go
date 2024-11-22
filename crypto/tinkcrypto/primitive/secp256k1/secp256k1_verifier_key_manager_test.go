@@ -9,13 +9,13 @@ package secp256k1_test
 import (
 	"testing"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/core/registry"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	"github.com/google/tink/go/testutil"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	"github.com/tink-crypto/tink-go/v2/testutil"
+	"google.golang.org/protobuf/proto"
 
-	secp256k1pb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
+	secp256k1pb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
 )
 
 const secp256k1VerifierTypeURL = "type.googleapis.com/google.crypto.tink.secp256k1PublicKey"

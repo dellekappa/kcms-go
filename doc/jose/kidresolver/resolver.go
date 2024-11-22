@@ -10,10 +10,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/trustbloc/kms-go/doc/util/kmsdidkey"
+	"github.com/dellekappa/kcms-go/doc/util/kmsdidkey"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/storage"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/storage"
 )
 
 // KIDResolver helps resolve the kid public key from a recipient 'kid' or a sender 'skid' during JWE decryption.

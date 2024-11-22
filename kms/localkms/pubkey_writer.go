@@ -15,21 +15,21 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/golang/protobuf/proto"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	ecdsapb "github.com/google/tink/go/proto/ecdsa_go_proto"
-	ed25519pb "github.com/google/tink/go/proto/ed25519_go_proto"
-	rsassapb "github.com/google/tink/go/proto/rsa_ssa_pkcs1_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/subtle"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	ecdsapb "github.com/tink-crypto/tink-go/v2/proto/ecdsa_go_proto"
+	ed25519pb "github.com/tink-crypto/tink-go/v2/proto/ed25519_go_proto"
+	rsassapb "github.com/tink-crypto/tink-go/v2/proto/rsa_ssa_pkcs1_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/subtle"
+	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
-	bbspb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
-	clpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/cl_go_proto"
-	secp256k1pb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
-	secp256k1subtle "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/secp256k1/subtle"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	bbspb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/bbs_go_proto"
+	clpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/cl_go_proto"
+	secp256k1pb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/secp256k1_go_proto"
+	secp256k1subtle "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/secp256k1/subtle"
 )
 
 const (

@@ -14,18 +14,18 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/tink/go/aead"
-	"github.com/google/tink/go/keyset"
-	"github.com/google/tink/go/tink"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	"github.com/tink-crypto/tink-go/v2/tink"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	kmsapi "github.com/trustbloc/kms-go/spi/kms"
+	kmsapi "github.com/dellekappa/kcms-go/spi/kms"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
-	"github.com/trustbloc/kms-go/kms"
-	"github.com/trustbloc/kms-go/kms/localkms/internal/keywrapper"
+	"github.com/dellekappa/kcms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kcms-go/kms"
+	"github.com/dellekappa/kcms-go/kms/localkms/internal/keywrapper"
 )
 
 const (
@@ -170,9 +170,14 @@ func (l *LocalKMS) Rotate(kt kmsapi.KeyType, keyID string, opts ...kmsapi.KeyOpt
 
 	km := keyset.NewManagerFromHandle(kh)
 
-	err = km.Rotate(keyTemplate)
+	newKeyID, err := km.Add(keyTemplate)
 	if err != nil {
-		return "", nil, fmt.Errorf("rotate: failed to call Tink's keyManager rotate: %w", err)
+		return "", nil, fmt.Errorf("rotate: failed to call Tink's keyManager add: %w", err)
+	}
+	// Set the new key as the primary key
+	err = km.SetPrimary(newKeyID)
+	if err != nil {
+		return "", nil, fmt.Errorf("rotate: failed to call Tink's keyManager setPrimary: %w", err)
 	}
 
 	updatedKH, err := km.Handle()

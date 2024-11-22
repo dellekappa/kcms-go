@@ -13,7 +13,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/tink/go/subtle/random"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 )
 
 const (

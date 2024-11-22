@@ -13,11 +13,11 @@ import (
 	"github.com/btcsuite/btcutil/base58"
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/kms-go/secretlock/noop"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/secretlock/noop"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	"github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
 )
 
 type testProvider struct {

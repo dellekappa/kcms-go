@@ -9,17 +9,17 @@ package kms
 import (
 	"fmt"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/testkeyset"
-	"github.com/google/tink/go/testutil"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/testkeyset"
+	"github.com/tink-crypto/tink-go/v2/testutil"
+	"google.golang.org/protobuf/proto"
 
-	kmsservice "github.com/trustbloc/kms-go/kms"
+	kmsservice "github.com/dellekappa/kcms-go/kms"
 
-	"github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/spi/secretlock"
-	"github.com/trustbloc/kms-go/spi/storage"
+	"github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/secretlock"
+	"github.com/dellekappa/kcms-go/spi/storage"
 )
 
 // KeyManager mocks a local Key Management Service + ExportableKeyManager.

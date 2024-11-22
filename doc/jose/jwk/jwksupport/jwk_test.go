@@ -27,10 +27,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/kms"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 )
 
 func TestDecodeJWK(t *testing.T) {

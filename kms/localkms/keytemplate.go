@@ -9,19 +9,19 @@ package localkms
 import (
 	"fmt"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/aead"
-	"github.com/google/tink/go/mac"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	ecdsapb "github.com/google/tink/go/proto/ecdsa_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
-	"github.com/google/tink/go/signature"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/mac"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	ecdsapb "github.com/tink-crypto/tink-go/v2/proto/ecdsa_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/signature"
+	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/bbs"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/secp256k1"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/bbs"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/secp256k1"
 )
 
 // nolint:gocyclo,funlen

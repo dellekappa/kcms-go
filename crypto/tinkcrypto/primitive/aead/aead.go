@@ -12,7 +12,7 @@ package aead
 import (
 	"fmt"
 
-	"github.com/google/tink/go/core/registry"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
 )
 
 // TODO - find a better way to setup tink than init.

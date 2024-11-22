@@ -21,7 +21,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 )
 
 const (

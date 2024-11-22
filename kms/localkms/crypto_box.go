@@ -13,19 +13,19 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/aead"
-	"github.com/google/tink/go/keyset"
-	ed25519pb "github.com/google/tink/go/proto/ed25519_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	ed25519pb "github.com/tink-crypto/tink-go/v2/proto/ed25519_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 	"golang.org/x/crypto/nacl/box"
+	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/doc/util/jwkkid"
-	"github.com/trustbloc/kms-go/kms/localkms/internal/keywrapper"
-	"github.com/trustbloc/kms-go/secretlock/noop"
-	"github.com/trustbloc/kms-go/util/cryptoutil"
+	"github.com/dellekappa/kcms-go/doc/util/jwkkid"
+	"github.com/dellekappa/kcms-go/kms/localkms/internal/keywrapper"
+	"github.com/dellekappa/kcms-go/secretlock/noop"
+	"github.com/dellekappa/kcms-go/util/cryptoutil"
 
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/kms"
 )
 
 // TODO: move CryptoBox out of the KMS package.

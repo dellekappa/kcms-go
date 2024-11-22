@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-module github.com/trustbloc/kms-go
+module github.com/dellekappa/kcms-go
 
 go 1.22
 
@@ -12,13 +12,13 @@ require (
 	github.com/btcsuite/btcutil v1.0.3-0.20201208143702-a53e38424cce
 	github.com/go-jose/go-jose/v3 v3.0.3
 	github.com/golang/mock v1.4.4
-	github.com/golang/protobuf v1.5.2
-	github.com/google/tink/go v1.7.0
+	github.com/google/uuid v1.6.0
 	github.com/stretchr/testify v1.8.2
 	github.com/teserakt-io/golang-ed25519 v0.0.0-20210104091850-3888c087a4c8
+	github.com/tink-crypto/tink-go/v2 v2.2.0
 	github.com/trustbloc/bbs-signature-go v1.0.2
 	golang.org/x/crypto v0.19.0
-	google.golang.org/protobuf v1.28.1
+	google.golang.org/protobuf v1.35.2
 )
 
 require (

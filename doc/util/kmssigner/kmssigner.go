@@ -9,8 +9,8 @@ package kmssigner
 import (
 	"strings"
 
-	"github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/kms"
 )
 
 const (

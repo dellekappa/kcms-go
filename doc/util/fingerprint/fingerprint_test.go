@@ -23,8 +23,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	"github.com/trustbloc/kms-go/doc/jose/jwk/jwksupport"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk/jwksupport"
 )
 
 func TestCreateDIDKey(t *testing.T) {

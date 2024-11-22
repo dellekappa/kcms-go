@@ -14,10 +14,10 @@ import (
 	"testing"
 
 	josecipher "github.com/go-jose/go-jose/v3/cipher"
-	"github.com/google/tink/go/subtle/random"
 	"github.com/stretchr/testify/require"
+	"github.com/tink-crypto/tink-go/v2/subtle/random"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
 )
 
 func TestNewAESCBC(t *testing.T) {

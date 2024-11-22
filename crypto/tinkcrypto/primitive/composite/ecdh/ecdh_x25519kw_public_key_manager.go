@@ -10,14 +10,14 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/tink/go/core/registry"
-	"github.com/google/tink/go/keyset"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
+	"github.com/tink-crypto/tink-go/v2/keyset"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/ecdh/subtle"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/ecdh/subtle"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 const (

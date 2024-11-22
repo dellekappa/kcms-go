@@ -23,9 +23,9 @@ import (
 	"github.com/go-jose/go-jose/v3"
 	"github.com/trustbloc/bbs-signature-go/bbs12381g2pub"
 
-	"github.com/trustbloc/kms-go/doc/jose/jwk"
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
-	"github.com/trustbloc/kms-go/spi/kms"
+	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
+	"github.com/dellekappa/kcms-go/spi/kms"
 )
 
 const (

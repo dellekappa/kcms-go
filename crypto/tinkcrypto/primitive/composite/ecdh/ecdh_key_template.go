@@ -7,14 +7,14 @@ SPDX-License-Identifier: Apache-2.0
 package ecdh
 
 import (
-	"github.com/golang/protobuf/proto"
-	"github.com/google/tink/go/aead"
-	commonpb "github.com/google/tink/go/proto/common_go_proto"
-	tinkpb "github.com/google/tink/go/proto/tink_go_proto"
+	"github.com/tink-crypto/tink-go/v2/aead"
+	commonpb "github.com/tink-crypto/tink-go/v2/proto/common_go_proto"
+	tinkpb "github.com/tink-crypto/tink-go/v2/proto/tink_go_proto"
+	"google.golang.org/protobuf/proto"
 
-	cbcaead "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead"
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/aead/subtle"
-	ecdhpb "github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
+	cbcaead "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/aead/subtle"
+	ecdhpb "github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/proto/ecdh_aead_go_proto"
 )
 
 // AEADAlg represents the AEAD implementation algorithm used by ECDH.

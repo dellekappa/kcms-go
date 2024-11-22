@@ -21,12 +21,12 @@ import (
 	"time"
 
 	"github.com/bluele/gcache"
-	"github.com/google/tink/go/keyset"
+	"github.com/tink-crypto/tink-go/v2/keyset"
 
-	cryptoapi "github.com/trustbloc/kms-go/spi/crypto"
+	cryptoapi "github.com/dellekappa/kcms-go/spi/crypto"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/keyio"
-	webkmsimpl "github.com/trustbloc/kms-go/kms/webkms"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/keyio"
+	webkmsimpl "github.com/dellekappa/kcms-go/kms/webkms"
 )
 
 const (

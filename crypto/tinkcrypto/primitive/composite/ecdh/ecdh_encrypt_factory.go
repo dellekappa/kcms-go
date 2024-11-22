@@ -10,11 +10,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/tink/go/core/primitiveset"
-	"github.com/google/tink/go/core/registry"
-	"github.com/google/tink/go/keyset"
+	"github.com/tink-crypto/tink-go/v2/core/primitiveset"
+	"github.com/tink-crypto/tink-go/v2/core/registry"
+	"github.com/tink-crypto/tink-go/v2/keyset"
 
-	"github.com/trustbloc/kms-go/crypto/tinkcrypto/primitive/composite/api"
+	"github.com/dellekappa/kcms-go/crypto/tinkcrypto/primitive/composite/api"
 )
 
 // NewECDHEncrypt returns an CompositeEncrypt primitive from the given keyset handle.
