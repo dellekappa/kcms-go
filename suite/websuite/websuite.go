@@ -82,6 +82,13 @@ func (s *suite) CMSCertIssuer() (suiteapi.CMSCertIssuer, error) {
 	}, nil
 }
 
+func (s *suite) CMSCertGetter() (suiteapi.CMSCertGetter, error) {
+	return &cmsImpl{
+		km: s.km,
+		cm: s.cm,
+	}, nil
+}
+
 func (s *suite) FixedKeySigner(kid string) (suiteapi.FixedKeySigner, error) {
 	return makeFixedKeyKMSCrypto(kid, s.km, s.cr)
 }

@@ -134,7 +134,7 @@ func TestSignerVerifierFactory(t *testing.T) {
 			} else {
 				// building new signer with private keyset handle that has a bad Tink key url parameter should fail
 				require.EqualError(t, err, "bbs_sign_factory: cannot obtain primitive set: "+
-					"registry.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
+					"handle.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
 					"unsupported key type: bad/url")
 
 				// set valid keyURL temporarily to rebuild a valid signer and continue test
@@ -350,7 +350,7 @@ func TestSignerVerifierFactory(t *testing.T) {
 
 					_, err = NewVerifier(tmpKHPub)
 					require.EqualError(t, err, "bbs_verifier_factory: cannot obtain primitive set: "+
-						"registry.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
+						"handle.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
 						"unsupported key type: bad/url")
 				})
 

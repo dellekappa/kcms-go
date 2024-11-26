@@ -44,6 +44,10 @@ func (s *suiteImpl) CMSCertIssuer() (suiteapi.CMSCertIssuer, error) {
 	return newCMSCertIssuer(s.kms, s.cms), nil
 }
 
+func (s *suiteImpl) CMSCertGetter() (suiteapi.CMSCertGetter, error) {
+	return newCMSCertGetter(s.cms), nil
+}
+
 func (s *suiteImpl) EncrypterDecrypter() (suiteapi.EncrypterDecrypter, error) {
 	return newEncrypterDecrypter(s.kms, s.crypto), nil
 }

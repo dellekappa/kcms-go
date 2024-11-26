@@ -26,3 +26,7 @@ func (c *cmsImpl) IssueCertificate(template *x509.Certificate, pub *jwk.JWK) (*x
 func (c *cmsImpl) FixedKeyCertIssuer(pub *jwk.JWK) (suiteapi.FixedKeyCertIssuer, error) {
 	return makeFixedKeyCMS(pub.KeyID, c.km, c.cm)
 }
+
+func (c *cmsImpl) GetCertificates(chainID string) ([]*x509.Certificate, error) {
+	return c.cm.Get(chainID)
+}

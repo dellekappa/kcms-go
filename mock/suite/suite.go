@@ -43,6 +43,11 @@ func (m *MockSuite) CMSCertIssuer() (api.CMSCertIssuer, error) {
 	return m.CMS, nil
 }
 
+// CMSCertGetter mock.
+func (m *MockSuite) CMSCertGetter() (api.CMSCertGetter, error) {
+	return m.CMS, nil
+}
+
 // KMSCryptoVerifier mock.
 func (m *MockSuite) KMSCryptoVerifier() (api.KMSCryptoVerifier, error) {
 	return m.KMS, nil

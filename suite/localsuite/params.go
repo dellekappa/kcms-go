@@ -64,6 +64,11 @@ type certIssuer interface {
 	IssueCertificate(template *x509.Certificate, kh interface{}, opts ...cmsapi.CertOpt) (string, *x509.Certificate, error)
 }
 
+type certGetter interface {
+	Get(string) ([]*x509.Certificate, error)
+}
+
 type certManager interface {
 	certIssuer
+	certGetter
 }

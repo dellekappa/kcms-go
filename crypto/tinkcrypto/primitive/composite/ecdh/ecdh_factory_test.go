@@ -278,7 +278,7 @@ func TestECDHESFactoryWithBadKeysetType(t *testing.T) {
 	// creating new primitives with an invalid keyset (should be public keyset) should fail
 	e, err := NewECDHEncrypt(khPriv)
 	require.EqualError(t, err, fmt.Sprintf("ecdh_factory: cannot obtain primitive set: "+
-		"registry.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
+		"handle.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
 		"unsupported key type: %s",
 		badKeyURLKeyTypeURL))
 	require.Empty(t, e)
@@ -286,7 +286,7 @@ func TestECDHESFactoryWithBadKeysetType(t *testing.T) {
 	// creating new primitives with a keyset containing an invalid key type should fail
 	d, err := NewECDHDecrypt(khPriv)
 	require.EqualError(t, err, fmt.Sprintf("ecdh_factory: cannot obtain primitive set: "+
-		"registry.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
+		"handle.PrimitivesWithKeyManager: cannot get primitive from key: registry.GetKeyManager: "+
 		"unsupported key type: %s",
 		badKeyURLKeyTypeURL))
 	require.Empty(t, d)

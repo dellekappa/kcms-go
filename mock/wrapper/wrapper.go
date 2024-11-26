@@ -137,6 +137,11 @@ func (m *MockCMS) IssueCertificate(template *x509.Certificate, pub *jwk.JWK) (*x
 	return nil, errors.New("not yet implemented")
 }
 
+// GetCertificates mock
+func (m *MockCMS) GetCertificates(chainID string) ([]*x509.Certificate, error) {
+	return nil, errors.New("not yet implemented")
+}
+
 // FixedKeyCertIssuer mock.
 func (m *MockCMS) FixedKeyCertIssuer(pub *jwk.JWK) (suiteapi.FixedKeyCertIssuer, error) {
 	return nil, errors.New("not yet implemented")

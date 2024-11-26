@@ -3,6 +3,7 @@ package localsuite
 import (
 	"crypto/x509"
 	"github.com/dellekappa/kcms-go/doc/jose/jwk"
+	"github.com/dellekappa/kcms-go/spi/cms"
 	"github.com/dellekappa/kcms-go/suite/api"
 )
 
@@ -25,7 +26,7 @@ func (k *cmsCertIssuerImpl) IssueCertificate(template *x509.Certificate, pub *jw
 		return nil, err
 	}
 
-	_, cert, err := k.cms.IssueCertificate(template, kh)
+	_, cert, err := k.cms.IssueCertificate(template, kh, cms.WithChainID(pub.KeyID))
 	return cert, err
 }
 

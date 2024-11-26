@@ -25,6 +25,7 @@ type Suite interface {
 	KMSCryptoMultiSigner() (KMSCryptoMultiSigner, error)
 	KMSCryptoVerifier() (KMSCryptoVerifier, error)
 	CMSCertIssuer() (CMSCertIssuer, error)
+	CMSCertGetter() (CMSCertGetter, error)
 	EncrypterDecrypter() (EncrypterDecrypter, error)
 	FixedKeyCrypto(pub *jwk.JWK) (FixedKeyCrypto, error)
 	FixedKeySigner(kid string) (FixedKeySigner, error)
@@ -82,6 +83,11 @@ type KMSCryptoSigner interface {
 type CMSCertIssuer interface {
 	IssueCertificate(template *x509.Certificate, key *jwk.JWK) (*x509.Certificate, error)
 	FixedKeyCertIssuer(pub *jwk.JWK) (FixedKeyCertIssuer, error)
+}
+
+// CMSCertGetter retrieves certificates.
+type CMSCertGetter interface {
+	GetCertificates(chainID string) ([]*x509.Certificate, error)
 }
 
 // FixedKeySigner provides the common signer interface, using a fixed key for each signer instance.
