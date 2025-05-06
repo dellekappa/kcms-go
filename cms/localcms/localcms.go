@@ -16,6 +16,7 @@ import (
 type LocalCMS struct {
 	signerProvider cmsapi.SignerProvider
 	store          cmsapi.Store
+	caProvider     cmsapi.CAProvider
 }
 
 // New will create a new (local) CMS service.
@@ -23,6 +24,7 @@ func New(p cmsapi.Provider) (*LocalCMS, error) {
 	return NewWithOpts(
 		WithSignerProvider(p.SignerProvider()),
 		WithStore(p.Store()),
+		WithCAProvider(p.CAProvider()),
 	)
 }
 
@@ -37,6 +39,7 @@ func NewWithOpts(opts ...CMSOpts) (*LocalCMS, error) {
 	return &LocalCMS{
 			signerProvider: options.SignerProvider(),
 			store:          options.Store(),
+			caProvider:     options.CAProvider(),
 		},
 		nil
 }
@@ -65,8 +68,10 @@ func (l *LocalCMS) IssueCertificate(template *x509.Certificate, privateKey inter
 		return "", nil, fmt.Errorf("cannot retrieve signer: %w", err)
 	}
 
-	// Genera un certificato autofirmato
-	certDER, err := x509.CreateCertificate(rand.Reader, template, template, signer.Public(), signer)
+	caCert := l.caProvider.CACert()
+
+	// Genera un certificato firmato dalla CA fornita da caProvider
+	certDER, err := x509.CreateCertificate(rand.Reader, template, caCert, signer.Public(), l.caProvider.CAKey())
 	if err != nil {
 		return "", nil, fmt.Errorf("create x509 certificate: %w", err)
 	}

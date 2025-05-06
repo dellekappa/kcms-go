@@ -13,6 +13,7 @@ import (
 type cmsOpts struct {
 	signerProvider cmsapi.SignerProvider
 	store          cmsapi.Store
+	caProvider     cmsapi.CAProvider
 }
 
 func (k *cmsOpts) SignerProvider() cmsapi.SignerProvider {
@@ -20,6 +21,9 @@ func (k *cmsOpts) SignerProvider() cmsapi.SignerProvider {
 }
 func (k *cmsOpts) Store() cmsapi.Store {
 	return k.store
+}
+func (k *cmsOpts) CAProvider() cmsapi.CAProvider {
+	return k.caProvider
 }
 
 // CMSOpts are the create CMS option.
@@ -36,5 +40,12 @@ func WithSignerProvider(signerProvider cmsapi.SignerProvider) CMSOpts {
 func WithStore(store cmsapi.Store) CMSOpts {
 	return func(opts *cmsOpts) {
 		opts.store = store
+	}
+}
+
+// WithCAProvider option is for setting store for KMS.
+func WithCAProvider(caProvider cmsapi.CAProvider) CMSOpts {
+	return func(opts *cmsOpts) {
+		opts.caProvider = caProvider
 	}
 }

@@ -31,6 +31,11 @@ type SignerProvider interface {
 	Signer(key interface{}) (crypto.Signer, error)
 }
 
+type CAProvider interface {
+	CACert() *x509.Certificate
+	CAKey() any
+}
+
 // Store defines the storage capability required by a CertManager Provider.
 type Store interface {
 	// Put stores the given cert under the given certID.
@@ -48,4 +53,5 @@ type Store interface {
 type Provider interface {
 	Store() Store
 	SignerProvider() SignerProvider
+	CAProvider() CAProvider
 }
