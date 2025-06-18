@@ -23,7 +23,7 @@ import (
 //   - Signature encoding: DER
 //   - Output prefix type: TINK
 func DERKeyTemplate() (*tinkpb.KeyTemplate, error) {
-	return createECDSAKeyTemplate(commonpb.HashType_SHA256,
+	return createSecp256K1KeyTemplate(commonpb.HashType_SHA256,
 		secp256k1pb.BitcoinCurveType_SECP256K1,
 		secp256k1pb.Secp256K1SignatureEncoding_Bitcoin_DER,
 		tinkpb.OutputPrefixType_TINK)
@@ -35,14 +35,14 @@ func DERKeyTemplate() (*tinkpb.KeyTemplate, error) {
 //   - Signature encoding: IEEE-P1363
 //   - Output prefix type: TINK
 func IEEEP1363KeyTemplate() (*tinkpb.KeyTemplate, error) {
-	return createECDSAKeyTemplate(commonpb.HashType_SHA256,
+	return createSecp256K1KeyTemplate(commonpb.HashType_SHA256,
 		secp256k1pb.BitcoinCurveType_SECP256K1,
 		secp256k1pb.Secp256K1SignatureEncoding_Bitcoin_IEEE_P1363,
 		tinkpb.OutputPrefixType_TINK)
 }
 
-// createECDSAKeyTemplate creates a KeyTemplate containing a Secp256K1KeyFormat with the given parameters.
-func createECDSAKeyTemplate(hashType commonpb.HashType, curve secp256k1pb.BitcoinCurveType,
+// createSecp256K1KeyTemplate creates a KeyTemplate containing a Secp256K1KeyFormat with the given parameters.
+func createSecp256K1KeyTemplate(hashType commonpb.HashType, curve secp256k1pb.BitcoinCurveType,
 	encoding secp256k1pb.Secp256K1SignatureEncoding, prefixType tinkpb.OutputPrefixType) (*tinkpb.KeyTemplate, error) {
 	params := &secp256k1pb.Secp256K1Params{
 		HashType: hashType,

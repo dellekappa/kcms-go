@@ -20,9 +20,10 @@ import (
 )
 
 const (
-	rsassaSignerTypeURL  = "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PrivateKey"
-	ecdsaSignerTypeURL   = "type.googleapis.com/google.crypto.tink.EcdsaPrivateKey"
-	ed25519SignerTypeURL = "type.googleapis.com/google.crypto.tink.Ed25519PrivateKey"
+	rsassaSignerTypeURL   = "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PrivateKey"
+	ecdsaSignerTypeURL    = "type.googleapis.com/google.crypto.tink.EcdsaPrivateKey"
+	ecdsaRawSignerTypeURL = "type.googleapis.com/google.crypto.tink.raw.EcdsaPrivateKey"
+	ed25519SignerTypeURL  = "type.googleapis.com/google.crypto.tink.Ed25519PrivateKey"
 )
 
 type SignerProvider struct{}
@@ -59,7 +60,7 @@ func convertToPrivateKey(privHandle *keyset.Handle) (crypto.Signer, error) {
 		}
 
 		return convertProtoToRSAPrivateKey(rsaPrivKey)
-	case ecdsaSignerTypeURL:
+	case ecdsaSignerTypeURL, ecdsaRawSignerTypeURL:
 		// Unmarshal the ECDSA private key
 		ecdsaPrivKey := &ecdsa_go_proto.EcdsaPrivateKey{}
 		if err := proto.Unmarshal(keyData.Value, ecdsaPrivKey); err != nil {
